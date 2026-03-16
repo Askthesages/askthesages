@@ -5,31 +5,39 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Quiz from "./pages/Quiz";
+import BirthChart from "./pages/BirthChart";
+import ZodiacProfiles from "./pages/ZodiacProfiles";
+import PlanetaryInfluences from "./pages/PlanetaryInfluences";
+import Affirmations from "./pages/Affirmations";
+import Meditation from "./pages/Meditation";
+import GoalSetting from "./pages/GoalSetting";
+import Tools from "./pages/Tools";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/tools" component={Tools} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/quiz" component={Quiz} />
+      <Route path="/birth-chart" component={BirthChart} />
+      <Route path="/zodiac" component={ZodiacProfiles} />
+      <Route path="/planets" component={PlanetaryInfluences} />
+      <Route path="/affirmations" component={Affirmations} />
+      <Route path="/meditation" component={Meditation} />
+      <Route path="/goals" component={GoalSetting} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
           <Router />
