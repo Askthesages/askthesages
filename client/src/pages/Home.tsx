@@ -23,14 +23,14 @@ const features = [
   {
     icon: Moon,
     title: "Birth Chart Reading",
-    description: "Discover your cosmic blueprint. AI-powered Vedic birth chart analysis reveals your life path, strengths, and destiny.",
+    description: "Discover your cosmic blueprint. AI-powered Vedic birth chart analysis — validated by human behavior specialists — reveals your life path, strengths, and destiny.",
     href: "/birth-chart",
     color: "oklch(0.65 0.18 290)",
   },
   {
     icon: Brain,
     title: "Personality Quiz",
-    description: "Uncover your entrepreneurial archetype with our AI-driven personality assessment. Know your edge.",
+    description: "Uncover your entrepreneurial archetype with our AI-driven personality assessment, developed with real psychologists and human behavior specialists. Know your edge.",
     href: "/quiz",
     color: "oklch(0.78 0.14 80)",
   },
@@ -51,14 +51,14 @@ const features = [
   {
     icon: Heart,
     title: "Daily Affirmations",
-    description: "AI-generated affirmations aligned to your zodiac sign and current planetary energy. Start each day empowered.",
+    description: "Sacred affirmations from the Vedas, Upanishads, and Bhagavad Gita — AI-curated and reviewed by human behavior specialists. Start each day empowered.",
     href: "/affirmations",
     color: "oklch(0.65 0.22 350)",
   },
   {
     icon: Target,
     title: "Goal Setting",
-    description: "Align your business goals with cosmic timing. Set intentions that resonate with your astrological blueprint.",
+    description: "Align your business goals with cosmic timing. AI-guided frameworks co-designed with psychologists to help you set intentions that resonate with your astrological blueprint.",
     href: "/goals",
     color: "oklch(0.65 0.18 150)",
   },
@@ -144,7 +144,7 @@ export default function Home() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-            Where Vedic astrology meets modern psychology — powerful AI-driven tools for entrepreneurs ready to align their ambition with the cosmos.
+            Where Vedic astrology meets modern psychology — powerful AI-driven insights, crafted in collaboration with <span className="text-gold/80 font-medium">real human psychologists and human behavior specialists</span>, for entrepreneurs ready to align their ambition with the cosmos.
           </p>
 
           {/* CTA Buttons */}
@@ -377,8 +377,8 @@ export default function Home() {
               <h2 className="font-cinzel font-bold text-2xl sm:text-3xl text-foreground mb-3">
                 Ancient Wisdom for the <span className="gradient-text-gold">Modern Soul Searcher</span>
               </h2>
-              <p className="text-muted-foreground mb-8 max-w-md mx-auto text-sm sm:text-base">
-                Unlock your cosmic blueprint. Discover the tools that bridge the timeless wisdom of the sages with the ambitions of today's most conscious entrepreneurs.
+              <p className="text-muted-foreground mb-8 max-w-lg mx-auto text-sm sm:text-base">
+                Unlock your cosmic blueprint. Our tools bridge the timeless wisdom of the sages with cutting-edge AI — validated by real human psychologists and human behavior specialists — for today's most conscious entrepreneurs.
               </p>
               <a href={getLoginUrl()}>
                 <Button

@@ -104,7 +104,7 @@ export default function Tools() {
               Your Complete <span className="gradient-text-gold">Toolkit</span>
             </h1>
             <p className="text-muted-foreground text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
-              Where Vedic astrology meets modern psychology. Three flagship tools designed to unlock your deepest potential as an entrepreneur.
+              Where Vedic astrology meets modern psychology — AI-driven insights crafted in collaboration with real human psychologists and human behavior specialists, designed to unlock your deepest potential as an entrepreneur.
             </p>
           </div>
 

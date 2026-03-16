@@ -70,3 +70,4 @@
 - [x] Make logo bigger on homepage hero and navbar
 - [x] Add Sound Healing placeholder card under Tools page (to be designed and linked later)
 - [x] Update affirmations AI prompt to strictly source from Vedas, Upanishads, and Bhagavad Gita
+- [x] Update site descriptions to highlight AI + real human psychologists and human behavior specialists
