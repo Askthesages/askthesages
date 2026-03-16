@@ -15,25 +15,25 @@ const zodiacSigns = [
 ];
 
 const categories = [
-  { value: "abundance", label: "💰 Abundance & Wealth" },
-  { value: "leadership", label: "👑 Leadership & Authority" },
-  { value: "confidence", label: "🔥 Confidence & Courage" },
-  { value: "creativity", label: "✨ Creativity & Innovation" },
-  { value: "relationships", label: "🤝 Relationships & Partnerships" },
-  { value: "resilience", label: "💪 Resilience & Strength" },
-  { value: "clarity", label: "🔮 Clarity & Vision" },
-  { value: "gratitude", label: "🙏 Gratitude & Presence" },
+  { value: "dharma", label: "🪷 Dharma — Right Action & Purpose" },
+  { value: "karma yoga", label: "⚡ Karma Yoga — Desireless Action" },
+  { value: "atman", label: "🔱 Atman — Self-Realization" },
+  { value: "brahman", label: "🌌 Brahman — Universal Consciousness" },
+  { value: "viveka", label: "🧘 Viveka — Discernment & Clarity" },
+  { value: "tapas", label: "🔥 Tapas — Discipline & Austerity" },
+  { value: "sattva", label: "✨ Sattva — Purity & Equanimity" },
+  { value: "surrender", label: "🙏 Ishvara Pranidhana — Surrender" },
 ];
 
 const defaultAffirmations = [
-  "I am a powerful creator and my business reflects my highest vision.",
-  "Abundance flows to me naturally and I receive it with gratitude.",
-  "I lead with wisdom, courage, and authentic power.",
-  "Every challenge I face is an opportunity for growth and expansion.",
-  "I am aligned with the cosmic flow of success and prosperity.",
-  "My intuition is my greatest business asset.",
-  "I attract the right clients, partners, and opportunities effortlessly.",
-  "I build with purpose and my work creates lasting positive impact.",
+  "I perform my duty with full effort and release attachment to outcomes, for right action itself is the highest offering — Bhagavad Gita 2.47",
+  "I am the unchanging Atman, the eternal witness behind all thoughts, unshaken by success or failure — Mandukya Upanishad",
+  "I walk my dharma with courage, knowing the universe supports those who live in alignment with their highest truth — Rigveda",
+  "I act without ego, offering all my work as a sacred gift to the Divine — Bhagavad Gita 9.27",
+  "I am not this body, not this mind — I am pure consciousness, Sat-Chit-Ananda, eternal and free — Chandogya Upanishad",
+  "I cultivate sattva in all I do: clarity of mind, purity of intention, and equanimity in all outcomes — Bhagavad Gita 14.6",
+  "Through tapas — disciplined, devoted effort — I forge the inner strength that no outer circumstance can diminish — Atharvaveda",
+  "I surrender the fruits of my labor to the Divine, and in that surrender, I find infinite peace and power — Bhagavad Gita 12.12",
 ];
 
 export default function Affirmations() {
@@ -80,13 +80,13 @@ export default function Affirmations() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[oklch(0.65_0.22_350/0.3)] bg-[oklch(0.65_0.22_350/0.08)] mb-4">
               <Heart className="h-3.5 w-3.5" style={{ color: "oklch(0.65 0.22 350)" }} />
-              <span className="text-xs font-cinzel tracking-widest uppercase" style={{ color: "oklch(0.65 0.22 350)" }}>Daily Mindset</span>
+              <span className="text-xs font-cinzel tracking-widest uppercase" style={{ color: "oklch(0.65 0.22 350)" }}>Sacred Wisdom</span>
             </div>
             <h1 className="font-cinzel font-bold text-3xl sm:text-4xl text-foreground mb-3">
               Daily <span className="gradient-text-gold">Affirmations</span>
             </h1>
             <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
-              AI-generated affirmations aligned with your zodiac energy and entrepreneurial intentions. Start each day empowered.
+              Daily affirmations drawn exclusively from the Vedas, Upanishads, and Bhagavad Gita — ancient wisdom for the modern conscious entrepreneur.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function Affirmations() {
           <div className="card-cosmic rounded-2xl p-5 mb-8">
             <h3 className="font-cinzel font-semibold text-foreground text-sm mb-4 flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-gold" />
-              Personalize Your Affirmations
+              Personalize Your Vedic Affirmations
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>
@@ -111,7 +111,7 @@ export default function Affirmations() {
                 </Select>
               </div>
               <div>
-                <label className="text-xs font-cinzel text-muted-foreground uppercase tracking-wider mb-2 block">Focus Area</label>
+                <label className="text-xs font-cinzel text-muted-foreground uppercase tracking-wider mb-2 block">Vedic Theme</label>
                 <Select value={category} onValueChange={setCategory}>
                   <SelectTrigger className="bg-[oklch(0.15_0.04_280)] border-[oklch(0.78_0.14_80/0.2)] text-foreground h-11 rounded-xl">
                     <SelectValue placeholder="Choose focus area" />

@@ -69,3 +69,4 @@
 ## UI Refinements
 - [x] Make logo bigger on homepage hero and navbar
 - [x] Add Sound Healing placeholder card under Tools page (to be designed and linked later)
+- [x] Update affirmations AI prompt to strictly source from Vedas, Upanishads, and Bhagavad Gita

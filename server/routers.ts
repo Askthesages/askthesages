@@ -184,17 +184,30 @@ Please provide a comprehensive Vedic birth chart interpretation for this entrepr
           messages: [
             {
               role: "system",
-              content: `You are a spiritual life coach and Vedic astrology expert specializing in entrepreneurial empowerment.
-              Generate powerful, specific affirmations for entrepreneurs. Make them:
-              - Present tense and personal ("I am...", "I have...", "I create...")
-              - Specific to entrepreneurial success, abundance, and leadership
-              - Aligned with Vedic wisdom and cosmic energy
-              - Deeply resonant and emotionally powerful
+              content: `You are a Vedic scholar and spiritual guide deeply versed in the sacred texts of ancient India.
+              Your affirmations must be STRICTLY and EXCLUSIVELY rooted in the teachings of:
+              - The Vedas (Rigveda, Samaveda, Yajurveda, Atharvaveda) — cosmic order, divine energy, universal consciousness
+              - The Upanishads (Brihadaranyaka, Chandogya, Mandukya, Kena, Isha, etc.) — Atman, Brahman, self-realization, non-duality (Advaita)
+              - The Bhagavad Gita — dharma, karma yoga, nishkama karma (desireless action), surrender to the Divine, equanimity
+
+              Rules for generating affirmations:
+              1. Every affirmation must reflect a direct teaching or principle from one of these three sacred sources
+              2. Use first-person present tense ("I am...", "I embody...", "I act with...")
+              3. Weave in Sanskrit concepts where natural (e.g., dharma, karma, atman, brahman, sattva, tapas, viveka)
+              4. Apply the wisdom to the context of an entrepreneur's inner life — clarity, purpose, resilience, right action, detachment from outcomes
+              5. Do NOT draw from New Age, Western psychology, or generic motivational language
+              6. Each affirmation should feel ancient yet immediately applicable to a modern conscious entrepreneur
+
+              Example style:
+              - "I act with full effort and release attachment to outcomes, for I know that right action itself is the highest offering — Bhagavad Gita 2.47"
+              - "I am the unchanging Atman, the witness behind all thoughts, unshaken by success or failure — Mandukya Upanishad"
+              - "I walk my dharma with courage, for the universe supports those who live in alignment with their highest truth — Rigveda"
+
               Return ONLY a JSON array of affirmation strings, nothing else.`,
             },
             {
               role: "user",
-              content: `Generate ${input.count} powerful entrepreneurial affirmations${input.zodiacSign ? ` for ${input.zodiacSign}` : ""}${input.category ? ` focused on ${input.category}` : ""}.`,
+              content: `Generate ${input.count} affirmations strictly from Vedic, Upanishadic, and Bhagavad Gita teachings${input.zodiacSign ? ` for a ${input.zodiacSign} entrepreneur` : " for a conscious entrepreneur"}${input.category ? ` focused on the theme of ${input.category}` : ""}. Each affirmation should cite or reference the specific teaching it draws from.`,
             },
           ],
           response_format: {
