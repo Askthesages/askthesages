@@ -34,13 +34,13 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[oklch(0.78_0.14_80/0.15)] bg-[oklch(0.08_0.02_280/0.92)] backdrop-blur-xl">
-      <div className="container flex items-center justify-between h-16">
+      <div className="container flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <img
             src={LOGO_URL}
             alt="Ask The Sages"
-            className="h-10 w-10 rounded-full object-cover border border-[oklch(0.78_0.14_80/0.3)]"
+            className="h-14 w-14 rounded-full object-cover border border-[oklch(0.78_0.14_80/0.3)] glow-gold-sm"
           />
           <span className="hidden sm:block font-cinzel font-bold text-sm text-gold leading-tight">
             Ask The Sages

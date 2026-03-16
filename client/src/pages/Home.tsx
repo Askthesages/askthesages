@@ -123,7 +123,7 @@ export default function Home() {
               <img
                 src={LOGO_URL}
                 alt="Ask The Sages"
-                className="relative h-28 w-28 sm:h-36 sm:w-36 rounded-full object-cover border-2 border-[oklch(0.78_0.14_80/0.5)] glow-gold"
+                className="relative h-44 w-44 sm:h-56 sm:w-56 md:h-64 md:w-64 rounded-full object-cover border-2 border-[oklch(0.78_0.14_80/0.5)] glow-gold"
               />
             </div>
           </div>

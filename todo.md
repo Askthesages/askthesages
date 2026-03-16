@@ -65,3 +65,7 @@
 - [x] Open Graph meta tags (og:title, og:description, og:image, og:url)
 - [x] Large thumb-friendly tap targets on mobile
 - [x] Fast initial load (minimal blocking resources)
+
+## UI Refinements
+- [x] Make logo bigger on homepage hero and navbar
+- [x] Add Sound Healing placeholder card under Tools page (to be designed and linked later)

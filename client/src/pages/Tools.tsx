@@ -3,13 +3,14 @@ import Navbar from "@/components/Navbar";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Brain, Heart, Target, Moon, Sun, Compass, ExternalLink, Sparkles, Star } from "lucide-react";
+import { Brain, Heart, Target, Moon, Sun, Compass, ExternalLink, Sparkles, Star, Music } from "lucide-react";
 
 // ─── FLAGSHIP PRODUCT URLS ───────────────────────────────────────────────────
 // TODO: Replace placeholder hrefs with real URLs when ready
 const CONSCIOUSNESS_MAP_URL = "#consciousness-map";   // ← Replace with your Claude/Jyotish prompt URL
 const ENERGY_ARCHETYPE_URL  = "#energy-archetype";    // ← Replace with your Energy Archetype Test URL
 const JUNGIAN_ARCHETYPE_URL = "#jungian-archetype";   // ← Replace with your Jungian Archetype Test URL
+const SOUND_HEALING_URL = "#sound-healing"; // ← Replace with your Sound Healing tool URL when ready
 // ─────────────────────────────────────────────────────────────────────────────
 
 const flagshipTools = [
@@ -58,6 +59,22 @@ const flagshipTools = [
     border: "oklch(0.65 0.20 200)",
     glow: false,
   },
+  {
+    id: "sound-healing",
+    icon: "🎵",
+    title: "Sound Healing",
+    subtitle: "Vibrational Therapy · Coming Soon",
+    description:
+      "Harness the ancient power of sound frequencies to clear energetic blockages, reduce stress, and elevate your entrepreneurial mindset. Curated healing frequencies aligned with your cosmic blueprint.",
+    cta: "Explore Sound Healing",
+    href: SOUND_HEALING_URL,
+    external: true,
+    badge: "Coming Soon",
+    gradient: "from-[oklch(0.55_0.18_170/0.12)] to-[oklch(0.60_0.15_200/0.06)]",
+    border: "oklch(0.60 0.18 170)",
+    glow: false,
+    comingSoon: true,
+  },
 ];
 
 const innerTools = [
@@ -67,6 +84,7 @@ const innerTools = [
   { icon: Compass, label: "Planetary Influences", href: "/planets", desc: "Cosmic timing & energy", color: "oklch(0.60 0.20 200)" },
   { icon: Heart, label: "Daily Affirmations", href: "/affirmations", desc: "AI-generated mantras", color: "oklch(0.65 0.22 350)" },
   { icon: Target, label: "Goal Framework", href: "/goals", desc: "Cosmic goal setting", color: "oklch(0.65 0.18 150)" },
+  { icon: Music, label: "Sound Healing", href: "#sound-healing", desc: "Vibrational therapy · Soon", color: "oklch(0.60 0.18 170)", comingSoon: true },
 ];
 
 export default function Tools() {
@@ -172,21 +190,34 @@ export default function Tools() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {innerTools.map((tool) => {
                 const Icon = tool.icon;
-                return (
-                  <Link key={tool.href} href={tool.href}>
-                    <div className="card-cosmic rounded-2xl p-4 flex items-center gap-3 cursor-pointer hover:border-[oklch(0.78_0.14_80/0.3)] hover:-translate-y-0.5 transition-all duration-200">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                        style={{ background: `${tool.color}15`, border: `1px solid ${tool.color}30` }}
-                      >
-                        <Icon className="h-5 w-5" style={{ color: tool.color }} />
-                      </div>
-                      <div>
-                        <p className="font-cinzel font-semibold text-foreground text-xs">{tool.label}</p>
-                        <p className="text-[10px] text-muted-foreground">{tool.desc}</p>
-                      </div>
+                const card = (
+                  <div className={`card-cosmic rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden transition-all duration-200 ${
+                    (tool as any).comingSoon
+                      ? "opacity-70 cursor-default"
+                      : "cursor-pointer hover:border-[oklch(0.78_0.14_80/0.3)] hover:-translate-y-0.5"
+                  }`}>
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: `${tool.color}15`, border: `1px solid ${tool.color}30` }}
+                    >
+                      <Icon className="h-5 w-5" style={{ color: tool.color }} />
                     </div>
-                  </Link>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-cinzel font-semibold text-foreground text-xs">{tool.label}</p>
+                      <p className="text-[10px] text-muted-foreground">{tool.desc}</p>
+                    </div>
+                    {(tool as any).comingSoon && (
+                      <span className="absolute top-1.5 right-1.5 text-[8px] font-cinzel font-bold px-1.5 py-0.5 rounded-full"
+                        style={{ color: tool.color, background: `${tool.color}18`, border: `1px solid ${tool.color}30` }}>
+                        Soon
+                      </span>
+                    )}
+                  </div>
+                );
+                return (tool as any).comingSoon ? (
+                  <div key={tool.href}>{card}</div>
+                ) : (
+                  <Link key={tool.href} href={tool.href}>{card}</Link>
                 );
               })}
             </div>
