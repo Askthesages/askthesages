@@ -33,16 +33,29 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[oklch(0.78_0.14_80/0.15)] bg-[oklch(0.08_0.02_280/0.92)] backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        background: "rgba(249,243,232,0.95)",
+        backdropFilter: "blur(12px)",
+        borderBottom: "1px solid rgba(201,162,39,0.25)",
+        boxShadow: "0 2px 20px rgba(61,28,2,0.08)"
+      }}
+    >
+      {/* Top decorative gold line */}
+      <div className="h-0.5 w-full" style={{ background: "linear-gradient(90deg, transparent 0%, #C9A227 20%, #B85C00 50%, #C9A227 80%, transparent 100%)" }} />
+
       <div className="container flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <img
-            src={LOGO_URL}
-            alt="Ask The Sages"
-            className="h-14 w-14 rounded-full object-cover border border-[oklch(0.78_0.14_80/0.3)] glow-gold-sm"
-          />
-          <span className="hidden sm:block font-cinzel font-bold text-sm text-gold leading-tight">
+        <Link href="/" className="flex items-center gap-3 shrink-0">
+          <div className="rounded-full p-0.5" style={{ background: "linear-gradient(135deg, #C9A227, #B85C00)" }}>
+            <img
+              src={LOGO_URL}
+              alt="Ask The Sages"
+              className="h-12 w-12 rounded-full object-cover"
+              style={{ background: "#F9F3E8" }}
+            />
+          </div>
+          <span className="hidden sm:block font-cinzel font-bold text-sm leading-tight" style={{ color: "#3D1C02" }}>
             Ask The Sages
           </span>
         </Link>
@@ -53,11 +66,12 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 font-cinzel ${
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 font-cinzel`}
+              style={
                 location === link.href
-                  ? "text-gold bg-[oklch(0.78_0.14_80/0.1)]"
-                  : "text-foreground/70 hover:text-gold hover:bg-[oklch(0.78_0.14_80/0.07)]"
-              }`}
+                  ? { color: "#B85C00", background: "rgba(184,92,0,0.08)", borderBottom: "2px solid #B85C00" }
+                  : { color: "#6B4C2A" }
+              }
             >
               {link.label}
             </Link>
@@ -72,7 +86,8 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="hidden sm:flex items-center gap-1.5 text-gold hover:text-gold hover:bg-[oklch(0.78_0.14_80/0.1)]"
+                  className="hidden sm:flex items-center gap-1.5"
+                  style={{ color: "#B85C00" }}
                 >
                   <User className="h-4 w-4" />
                   <span className="font-cinzel text-xs">{user?.name?.split(" ")[0] || "Dashboard"}</span>
@@ -81,7 +96,8 @@ export default function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hidden sm:flex text-muted-foreground hover:text-destructive"
+                className="hidden sm:flex"
+                style={{ color: "#8A7E72" }}
                 onClick={() => logout.mutate()}
               >
                 <LogOut className="h-4 w-4" />
@@ -91,7 +107,8 @@ export default function Navbar() {
             <a href={getLoginUrl()}>
               <Button
                 size="sm"
-                className="gradient-gold text-[oklch(0.08_0.02_280)] font-cinzel font-semibold text-xs glow-gold-sm hover:opacity-90 transition-opacity"
+                className="font-cinzel font-semibold text-xs"
+                style={{ background: "linear-gradient(135deg, #B85C00, #C9A227)", color: "#FFF8F0", border: "none", boxShadow: "0 2px 10px rgba(184,92,0,0.3)" }}
               >
                 <Star className="h-3.5 w-3.5 mr-1" />
                 Sign In
@@ -102,21 +119,22 @@ export default function Navbar() {
           {/* Mobile Menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden text-foreground">
+              <Button variant="ghost" size="icon" className="lg:hidden" style={{ color: "#3D1C02" }}>
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-72 bg-[oklch(0.10_0.03_280)] border-l border-[oklch(0.78_0.14_80/0.15)] p-0"
+              className="w-72 p-0"
+              style={{ background: "#F9F3E8", borderLeft: "1px solid rgba(201,162,39,0.25)" }}
             >
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b border-[oklch(0.78_0.14_80/0.15)]">
+                <div className="flex items-center justify-between p-4" style={{ borderBottom: "1px solid rgba(201,162,39,0.2)" }}>
                   <div className="flex items-center gap-2">
                     <img src={LOGO_URL} alt="ATS" className="h-8 w-8 rounded-full" />
-                    <span className="font-cinzel font-bold text-gold text-sm">Ask The Sages</span>
+                    <span className="font-cinzel font-bold text-sm" style={{ color: "#3D1C02" }}>Ask The Sages</span>
                   </div>
-                  <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>
+                  <Button variant="ghost" size="icon" onClick={() => setOpen(false)} style={{ color: "#6B4C2A" }}>
                     <X className="h-4 w-4" />
                   </Button>
                 </div>
@@ -126,29 +144,33 @@ export default function Navbar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-cinzel font-medium transition-all ${
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-cinzel font-medium transition-all"
+                      style={
                         location === link.href
-                          ? "text-gold bg-[oklch(0.78_0.14_80/0.12)] border border-[oklch(0.78_0.14_80/0.2)]"
-                          : "text-foreground/70 hover:text-gold hover:bg-[oklch(0.78_0.14_80/0.07)]"
-                      }`}
+                          ? { color: "#B85C00", background: "rgba(184,92,0,0.08)", border: "1px solid rgba(184,92,0,0.2)" }
+                          : { color: "#6B4C2A" }
+                      }
                     >
-                      <Star className="h-3.5 w-3.5 text-gold/50" />
+                      <span style={{ color: "rgba(201,162,39,0.6)", fontSize: "0.7rem" }}>ॐ</span>
                       {link.label}
                     </Link>
                   ))}
                 </div>
-                <div className="p-4 border-t border-[oklch(0.78_0.14_80/0.15)]">
+                <div className="p-4" style={{ borderTop: "1px solid rgba(201,162,39,0.2)" }}>
                   {isAuthenticated ? (
                     <div className="space-y-2">
                       <Link href="/dashboard" onClick={() => setOpen(false)}>
-                        <Button className="w-full gradient-gold text-[oklch(0.08_0.02_280)] font-cinzel font-semibold">
+                        <Button className="w-full font-cinzel font-semibold"
+                          style={{ background: "linear-gradient(135deg, #B85C00, #C9A227)", color: "#FFF8F0", border: "none" }}
+                        >
                           <User className="h-4 w-4 mr-2" />
                           My Dashboard
                         </Button>
                       </Link>
                       <Button
                         variant="ghost"
-                        className="w-full text-muted-foreground"
+                        className="w-full"
+                        style={{ color: "#8A7E72" }}
                         onClick={() => { logout.mutate(); setOpen(false); }}
                       >
                         <LogOut className="h-4 w-4 mr-2" />
@@ -157,7 +179,9 @@ export default function Navbar() {
                     </div>
                   ) : (
                     <a href={getLoginUrl()} onClick={() => setOpen(false)}>
-                      <Button className="w-full gradient-gold text-[oklch(0.08_0.02_280)] font-cinzel font-semibold glow-gold-sm">
+                      <Button className="w-full font-cinzel font-semibold"
+                        style={{ background: "linear-gradient(135deg, #B85C00, #C9A227)", color: "#FFF8F0", border: "none", boxShadow: "0 2px 10px rgba(184,92,0,0.3)" }}
+                      >
                         <Star className="h-4 w-4 mr-2" />
                         Sign In to Begin
                       </Button>
